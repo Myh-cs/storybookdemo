@@ -19,3 +19,5 @@ cli 为我们生成了 一个demo并初始化添加了
 和
 [addon-links](https://github.com/storybookjs/storybook/tree/master/addons/links)
 两个插件分别用来**展示事件**交互和storybook内**转跳**。
+
+> npx介绍  [npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)

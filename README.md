@@ -104,4 +104,23 @@ storiesOf('Link', module)
   ));
 ```
   
+### storysource
 
+1. `npm i -D @storybook/addon-storysource `
+2. `addons`文件添加引入`import '@storybook/addon-storysource/register';`
+3.  在`.storybook`文件夹下添加`webpack.config.js`文件
+```js
+module.exports = function({ config }) {
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  return config;
+};
+```
+运行后会发现多了一个tab页来展示story的code
+![image](https://user-images.githubusercontent.com/19797724/63241368-0a8e1280-c286-11e9-8478-f3f616606fb3.png)
+
+灰色部分会显示当前页的code

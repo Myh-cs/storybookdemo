@@ -23,7 +23,7 @@ cli 为我们生成了 一个demo并初始化添加了
 > npx介绍  [npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)
 
 ## 手动集成版
-将`storyboo`k集成到已有项目,这里以`create-react-app`创建的新项目为例
+将`storybook`集成到已有项目,这里以`create-react-app`创建的新项目为例
 1. `npm install @storybook/react --save-dev`
 2. `npm install babel-loader @babel/core --save-dev` 如果项目中已经装了 则不需要这一步
 3. 新建`.storybook`文件见并在该文件夹下创建`config.js`文件
@@ -40,7 +40,7 @@ function loadStories() {
 configure(loadStories, module);
 
 ```
-4. 在`scr`目录下创建`stories`文件夹，并在该文件夹下创建`demo.stories.js`文件
+4. 在`src`目录下创建`stories`文件夹，并在该文件夹下创建`demo.stories.js`文件
 `demo.stories.js`
 ```js
 import React from 'react';

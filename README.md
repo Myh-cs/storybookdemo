@@ -1,6 +1,8 @@
 # storybookdemo
 storybook 学习仓库
 
+> 没有什么是删除node_modules 重新安装解决不了的  如果有，那就只能google一下了。
+
 ---
 初始化
 ## CLI 版

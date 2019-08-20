@@ -126,3 +126,34 @@ module.exports = function({ config }) {
 ![image](https://user-images.githubusercontent.com/19797724/63241368-0a8e1280-c286-11e9-8478-f3f616606fb3.png)
 
 灰色部分会显示当前页的code
+
+---
+
+### 代码片段
+
+`config.js`文件中使用 `require.context`做文件的自动导入。
+
+使用`configure`读取解析所道入的内容呈现在`storybook`中
+```js
+import { configure } from '@storybook/react';
+
+// automatically import all files ending in *.stories.js
+const req = require.context('../src/stories', true, /\.stories\.js$/);
+function loadStories() {
+  req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module);
+```
+
+在stories文件中使用`storiesOf('Button/demo', module)`第一个参数用‘/’分割可以创建层级结构
+```js
+storiesOf('Button/demo', module)
+  .add('with text', () => (
+    <Button>Hello Button</Button>
+  ))
+  .add('with emoji', () => (
+    <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
+  )); 
+```
+![image](https://user-images.githubusercontent.com/19797724/63310987-4f21b880-c32f-11e9-83ea-1f170813fe09.png)
